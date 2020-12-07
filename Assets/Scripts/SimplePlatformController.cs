@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class SimplePlatformController : MonoBehaviour
@@ -45,7 +46,7 @@ public class SimplePlatformController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(h));
         if (h * rb2d.velocity.x < maxSpeed)
         {
-            rb2d.AddForce(Vector2.right * h * moveForce);
+            rb2d.AddForce(Vector2.right * (h * moveForce));
         }
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
         {
