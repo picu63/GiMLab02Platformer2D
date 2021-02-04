@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
 			// ... set the sprite renderer's sprite to be the damagedEnemy sprite.
 			ren.sprite = damagedEnemy;
 			
-		// If the enemy has zero or fewer hit points and isn't dead yet...
+		// If the enemy has zero or fewer hit currentPoints and isn't dead yet...
 		if(HP <= 0 && !dead)
 			// ... call the death function.
 			Death ();
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
 	
 	public void Hurt()
 	{
-		// Reduce the number of hit points by one.
+		// Reduce the number of hit currentPoints by one.
 		HP--;
 	}
 	
@@ -79,7 +79,7 @@ public class Enemy : MonoBehaviour
 		ren.enabled = true;
 		ren.sprite = deadEnemy;
 
-		// Increase the score by 100 points
+		// Increase the score by 100 currentPoints
 		score.score += 100;
 
 		// Set dead to true.
@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
 		scorePos = transform.position;
 		scorePos.y += 1.5f;
 
-		// Instantiate the 100 points prefab at this point.
+		// Instantiate the 100 currentPoints prefab at this point.
 		Instantiate(hundredPointsUI, scorePos, Quaternion.identity);
 	}
 

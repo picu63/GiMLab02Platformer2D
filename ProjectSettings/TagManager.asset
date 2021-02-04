@@ -10,6 +10,7 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - Platform
+  - Coin
   layers:
   - Default
   - TransparentFX

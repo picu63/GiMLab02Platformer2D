@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 9084381954774560673}
   - component: {fileID: 9084381954774560677}
   - component: {fileID: 9084381954774560674}
-  - component: {fileID: 9084381954774560676}
   m_Layer: 8
   m_Name: Platform
   m_TagString: Platform
@@ -236,20 +235,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallDelay: 23.48
---- !u!114 &9084381954774560676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9084381954774560675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65e55e29b16b974c8408349daf8cb6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinSpawns:
-  - {fileID: 73381318}
-  - {fileID: 1331310090}
-  - {fileID: 732698059}
-  coin: {fileID: 674187286062779237, guid: 8afb630dc24cbb34f845d5e23514c397, type: 3}

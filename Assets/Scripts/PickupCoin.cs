@@ -1,17 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupCoin : MonoBehaviour
 {
-    public delegate void PickupAction();
+    private GameManager _gameManager;
 
-    public static event PickupAction Pick;
+    private void Start()
+    {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Coin"))
         {
-            Destroy(this.gameObject);
+            if (other.gameObject.name.Contains("CoinSprite"))
+                _gameManager.currentPoints++;
+            else if (other.gameObject.name.Contains("MarioCoin"))
+                _gameManager.currentPoints += 2;
+            else if (other.gameObject.name.Contains("BigCoin"))
+                _gameManager.currentPoints += 3;
+
+            Destroy(other.gameObject);
         }
-    }
+    } 
 }

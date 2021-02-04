@@ -3,8 +3,6 @@ using System.Collections;
 
 public class SpawnPlatform : MonoBehaviour
 {
-
-
     public int maxPlatforms = 20;
    
     public GameObject platform;
@@ -32,6 +30,4 @@ public class SpawnPlatform : MonoBehaviour
             originPosition = randomPosition;
         }
     }
-
-
 }

@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class SpawnCoins : MonoBehaviour
 {
     public Transform[] coinSpawns;
-    public GameObject coin;
+    public GameObject[] coins;
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +19,11 @@ public class SpawnCoins : MonoBehaviour
 
     private void Spawn()
     {
-        for (int i = 0; i < coinSpawns.Length; i++)
+        foreach (var coinSpawn in coinSpawns)
         {
-            float coinFlip = Random.Range(0f, 2f);
-            if (coinFlip>0)
-            {
-                Instantiate(coin, coinSpawns[i].position, Quaternion.identity);
-            }
+            var coinSelect = Random.Range(0, coins.Length);
+            var coin = coins[coinSelect];
+            Instantiate(coin,coinSpawn.transform.position,Quaternion.identity);
         }
     }
 }
